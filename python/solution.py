@@ -31,13 +31,13 @@ def decrypt_playfair(cipher_text, key):
         row1, col1 = find_position(pair[0], key_table)
         row2, col2 = find_position(pair[1], key_table)
 
-        if row1 == row2:  # Same row
+        if row1 == row2:  #Same row
             decrypted_text += key_table[row1][(col1 - 1) % 5]
             decrypted_text += key_table[row2][(col2 - 1) % 5]
-        elif col1 == col2:  # Same column
+        elif col1 == col2:  #Same column
             decrypted_text += key_table[(row1 - 1) % 5][col1]
             decrypted_text += key_table[(row2 - 1) % 5][col2]
-        else:  # Rectangle
+        else:  #Rectangle
             decrypted_text += key_table[row1][col2]
             decrypted_text += key_table[row2][col1]
 
